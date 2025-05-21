@@ -27,11 +27,12 @@ tar -czf "$PLIK_DO_WYSLANIA" "$PLIK"
 IP="127.0.0.1"
 USER="user" #w tym miejscu wpisz nazwę swojego użytkownika
 PASS="secret_password" #w tym miejscu podaj swoje hasło
-KAT_NA_SERWERZE="."
+KAT_NA_SERWERZE="backup"
 
 echo "Przesyłam plik na serwer FTP ..."
 ftp -inv "$IP" <<EOF
 user $USER $PASS
+mkdir $KAT_NA_SERWERZE
 cd $KAT_NA_SERWERZE
 put "$PLIK_DO_WYSLANIA"
 bye
