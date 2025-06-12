@@ -17,5 +17,10 @@ def scan_ports(host, port_range):
             else:
                 print(f"Port {port} zamknięty")
 
+# pobieranie danych od użytkownika
+host = input("Podaj adres IP serwera do przetestowania: ")
+start_port = int(input("Podaj początkowy port: "))
+end_port = int(input("Podaj końcowy port: "))
+
 # zastosowanie funkcji dla danego adresu i portów
-scan_ports("adres_ip4_serwera_ktory_testujemy", range(120, 140))
+scan_ports(host, range(start_port, end_port + 1))
